@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>글쓰기 폼</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'blog:index' %}">블로그홈 | </a>
+        <a href="{% url 'blog:post_create' %}">글쓰기 | </a>
+    </nav>
+    <section>
+        <h2>포스트 등록</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+        <!-- 첨부 파일이 있는 경우 멀티폼 코드를 반드시 작성 -->
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="저장하기">
+        </form>
+    </section>
+</body>
+</html>
